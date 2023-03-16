@@ -1,0 +1,5 @@
+package com.agrosofttechnologies.covidreports.repository;
+
+public interface CovidReportRepository {
+
+}

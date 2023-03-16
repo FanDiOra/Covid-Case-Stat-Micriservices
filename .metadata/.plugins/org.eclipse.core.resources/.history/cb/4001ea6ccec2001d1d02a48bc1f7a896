@@ -1,0 +1,70 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ResponseError {
+
+    private int code;
+    private String message;
+    private String description;
+    private LocalDateTime dateTime;
+    
+    public ResponseError() {}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+    
+	private void prepareSuccessResponse (String message) {
+		prepareResponse(HttpStatus.OK.value(), message);		
+	}
+
+	private void prepareFailureResponse (Exception e) {
+		prepareResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), Status.KO.name(), e.getMessage());
+	}
+	
+	private void prepareFailureResponse (int code, String message) {
+		prepareResponse(code, Status.KO.name(), message);
+	}
+
+	private void prepareResponse (Integer code, String status, String message) {
+		response.setCode(code);
+		response.setStatus(status);
+		response.setMessage(message);
+
+		response.setEntity(null);
+		response.setEntities(null);
+	}
+}

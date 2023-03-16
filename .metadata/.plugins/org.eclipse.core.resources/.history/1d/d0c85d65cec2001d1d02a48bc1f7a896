@@ -1,0 +1,49 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ResponseError {
+
+    private int code;
+    private String message;
+    private String description;
+    private LocalDateTime dateTime;
+    
+    public ResponseError() {}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+      
+}

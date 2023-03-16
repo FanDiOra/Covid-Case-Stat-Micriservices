@@ -1,0 +1,17 @@
+package com.agrosofttechnologies.covidcaseregistration.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.agrosofttechnologies.covidcaseregistration.bean.CovidCase;
+
+class CovidCaseRegistrationControllerTest {
+
+	@Test
+	void addCovidCase() {
+		CovidCase covidCase = new CovidCase(0, "Hospital", "Positive", "John",
+				"Nixon", "541-754-3010", "john@gmail.com", "1989-04-26", "209-49-6193", "SSN");
+	}
+
+}

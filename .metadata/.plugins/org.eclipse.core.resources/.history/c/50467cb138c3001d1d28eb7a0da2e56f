@@ -1,0 +1,17 @@
+package com.agrosofttechnologies.covidreports.entities;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "covidReport")
+public class CovidReport implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private String state;
+}

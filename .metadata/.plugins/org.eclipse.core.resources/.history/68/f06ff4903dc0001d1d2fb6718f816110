@@ -1,0 +1,36 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
+@Table(name = "address")
+public class Address implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotEmpty(message = " is required")
+	private String street;
+	
+	@NotEmpty(message = " is required")
+	private String city;
+	
+	@NotEmpty(message = " is required")
+	private String state;
+	
+	@NotEmpty(message = " is required")
+	private String postal;
+	
+	@NotEmpty(message = " is required")
+	private String country;
+}

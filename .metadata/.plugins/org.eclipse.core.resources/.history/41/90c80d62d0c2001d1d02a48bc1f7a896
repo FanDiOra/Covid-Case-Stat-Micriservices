@@ -1,0 +1,10 @@
+package com.agrosofttechnologies.covidcaseregistration.Exceptions;
+
+public class DatabaseConnectivityException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

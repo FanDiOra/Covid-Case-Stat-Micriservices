@@ -1,0 +1,19 @@
+package com.agrosofttechnologies.covidreports.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.agrosofttechnologies.covidreports.bean.ResponseError;
+import com.agrosofttechnologies.covidreports.repository.CovidReportRepository;
+
+@RestController
+@RequestMapping("/fd-etu/agrosoft/covid/reports")
+public class CovidReportController {
+
+	@Autowired
+	CovidReportRepository repository;
+	
+	@Autowired
+	private ResponseError errorResponse;
+}

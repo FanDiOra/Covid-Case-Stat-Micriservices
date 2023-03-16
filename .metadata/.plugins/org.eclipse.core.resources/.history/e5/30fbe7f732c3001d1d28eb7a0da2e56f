@@ -1,0 +1,86 @@
+package com.agrosofttechnologies.covidcaseregistration;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.agrosofttechnologies.covidcaseregistration.Entities.Address;
+import com.agrosofttechnologies.covidcaseregistration.Entities.CovidCase;
+import com.agrosofttechnologies.covidcaseregistration.repository.AddressRepository;
+import com.agrosofttechnologies.covidcaseregistration.repository.CovidCaseRepository;
+
+@SpringBootTest
+class CovidCaseRegistrationControllerTest {
+
+	@Autowired
+	private CovidCaseRepository crepo;
+	
+	@Autowired
+	private AddressRepository arepo;
+	
+	@Test
+	void addCovidCase() {
+		
+		CovidCase covidCase1 = new CovidCase(0, "Hospital", "Positive", "John",
+				"Nixon", "541-754-3010", "john@gmail.com", "1989-04-26", "209-49-6193", "SSN");
+		CovidCase covidCaseCreate1 = crepo.save(covidCase1);
+		Address address1 = new Address(0, "1600 Pennsylvania Avenue NW", "Washington", "DC",
+				"20500", "USA");
+		address1.setCovidCase(covidCaseCreate1);
+		arepo.save(address1);
+		
+		
+		CovidCase covidCase2 = new CovidCase(0, "Hospital", "Recovered", "Ghislain",
+	  "Akinocho", "77-569-95-77", "ghislain.akinocho.vac@esmt.sn", "1989-05-18",
+	  "209-49-6194", "SN");
+		CovidCase covidCaseCreate2 = crepo.save(covidCase2);
+		Address address2 = new Address(0, "Route de Ouakam", "Senegal", "DKR",
+	  "10221", "Senegal");
+		address2.setCovidCase(covidCaseCreate2);
+		arepo.save(address2);
+	
+	  
+		CovidCase covidCase3 = new CovidCase(0, "Hospital", "Vaccinated",
+	  "Aminata Niang Adam", "Traore", "78-124-45-14", "ami.n.a.t@icloud.com",
+	  "2000-02-03", "AA0300220", "ML");
+		CovidCase covidCaseCreate3 = crepo.save(covidCase3);
+		Address address3 = new Address(0, "Rue 39 CO", "Senegal", "DKR", "20221",
+	  "Senegal");
+		address3.setCovidCase(covidCaseCreate3);
+		arepo.save(address3);
+	  
+	
+		CovidCase covidCase4 = new CovidCase(0, "Hospital", "Death", "Christine",
+	  "Dupons", "07-77-95-67-38", "christined@gmail.com", "1971-01-13",
+	  "159-74-2014", "MLK");
+		CovidCase covidCaseCreate4 = crepo.save(covidCase4);
+		Address address4 = new Address(0, "3 square des 9 Arpents", "Meulan", "FR",
+	  "27319", "FRANCE");
+	  	address4.setCovidCase(covidCaseCreate4);
+		arepo.save(address4);
+		
+	  
+		CovidCase covidCase5 = new CovidCase(0, "Hospital", "Positive", "Gibraltar",
+	  "Fox", "541-754-3010", "fox@gmail.com", "1989-04-26", "209-49-6193", "SSN");
+	  CovidCase covidCaseCreate5 = crepo.save(covidCase5);
+	  	Address address5 = new Address(0, "1600 Pennsylvania Avenue NW",
+	  "Washington", "DC", "20500", "USA");
+	  	address5.setCovidCase(covidCaseCreate5);
+		arepo.save(address5);
+		  
+	}
+	
+	@Test
+	void findByNationalID() {
+		List<CovidCase> listCovidCases = crepo.findByNationalID("209-49");
+		
+		if(listCovidCases != null) {
+			System.out.println(listCovidCases);
+		}
+		else
+			System.err.println("National ID not found !");
+	}
+
+}

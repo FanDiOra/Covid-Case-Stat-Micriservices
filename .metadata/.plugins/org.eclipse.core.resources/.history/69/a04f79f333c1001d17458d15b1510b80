@@ -1,0 +1,13 @@
+package com.agrosofttechnologies.covidcaseregistration.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrosofttechnologies.covidcaseregistration.bean.CovidCase;
+
+public interface CovidCaseRepository extends JpaRepository<CovidCase, Integer> {
+	public CovidCase findByNationalID (String nationalID);
+	public CovidCase findByEmail (String email);
+	public List<CovidCase> getAllCovidCases();
+}

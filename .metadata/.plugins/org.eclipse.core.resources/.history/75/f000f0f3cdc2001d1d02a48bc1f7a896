@@ -1,0 +1,13 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+
+public class ResponseError {
+
+    private int code;
+    private String message;
+    private String description;
+    private LocalDateTime dateTime;
+    
+    public ResponseError() {}
+}

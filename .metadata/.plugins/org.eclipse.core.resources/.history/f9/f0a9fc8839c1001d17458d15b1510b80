@@ -1,0 +1,5 @@
+package com.agrosofttechnologies.covidcaseregistration.repository;
+
+public interface AddressRepository {
+
+}

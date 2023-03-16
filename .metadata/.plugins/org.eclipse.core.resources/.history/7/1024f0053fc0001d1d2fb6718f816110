@@ -1,0 +1,7 @@
+spring.application.name=covid-case-registration
+spring.config.import=optional:configserver:http://localhost:8888
+server.port=8000
+
+spring.jpa.show-sql=true
+spring.datasource.url=jdbc:h2:mem:currencyexchangedb
+spring.h2.console.enabled=true

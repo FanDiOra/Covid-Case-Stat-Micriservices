@@ -1,0 +1,7 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+@Entity
+@Table(name = "covidCase")
+public class CovidCase {
+
+}

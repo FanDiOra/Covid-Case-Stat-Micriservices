@@ -1,0 +1,27 @@
+package com.agrosofttechnologies.covidreports.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.agrosofttechnologies.covidreports.bean.ResponseError;
+import com.agrosofttechnologies.covidreports.repository.CovidReportRepository;
+
+@RestController
+@RequestMapping("/fd-etu/agrosoft/covid/reports")
+public class CovidReportController {
+
+	@Autowired
+	CovidReportRepository repository;
+	
+	@Autowired
+	private ResponseError errorResponse;
+	
+	@GetMapping("state/{state}")
+	public ResponseEntity<Object> getReportByState (@PathVariable("state") String state){
+		return null;
+	}
+}

@@ -1,0 +1,37 @@
+package com.agrosofttechnologies.covidreports.entities;
+
+import java.io.Serializable;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "covidReport")
+public class CovidReport implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@NotEmpty(message = "State is required")
+	private String state;
+	
+	@Valid
+	@NotNull(message = "Report is required")
+	@OneToOne(mappedBy = "covidReport", cascade = CascadeType.ALL)
+	private Report report;
+	
+	public CovidReport() {}
+
+	public CovidReport(String state, Report report) {
+		this.state = state;
+		this.report = report;
+	}
+	
+	
+}

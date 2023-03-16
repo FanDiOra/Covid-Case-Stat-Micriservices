@@ -1,0 +1,17 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ResponseError<T> {
+	
+	private Integer code;
+    private String message;
+    private String description;
+    private LocalDateTime dateTime;
+
+    private T entity;
+	private List<T> entities = new ArrayList<>();
+    
+}

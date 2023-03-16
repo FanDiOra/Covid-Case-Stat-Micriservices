@@ -1,0 +1,59 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ResponseError implements Serializable {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int status;
+    private String message;
+    private String description;
+    private LocalDateTime dateTime;
+
+    public ResponseError(int status, String message, String description, LocalDateTime dateTime) {
+        this.status = status;
+        this.message = message;
+        this.description = description;
+        this.dateTime = dateTime;
+    }
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+    
+}

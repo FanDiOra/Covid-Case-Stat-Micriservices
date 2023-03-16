@@ -1,0 +1,10 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "covidCase")
+public class CovidCase {
+
+}

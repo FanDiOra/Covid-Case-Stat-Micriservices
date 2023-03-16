@@ -1,0 +1,162 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
+@Table(name = "covidCase")
+public class CovidCase implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer caseID;
+	
+	@NotEmpty(message = "Source is required")
+	private String source;
+	
+	@NotEmpty(message = "Case Type is required")
+	private String caseType;
+	
+	@NotEmpty(message = "Firstname is required")
+	private String firstName;
+	
+	@NotEmpty(message = "Lastname is required")
+	private String lastName;
+	
+	@NotEmpty(message = "Phone number is required")
+	private String phone;
+	
+	private String email;
+	
+	@Basic
+	@NotEmpty(message = "Date of Birth is required")
+	private Date dateOfBirth;
+	
+	@NotEmpty(message = "National ID is required")
+	private String nationalID;
+	
+	@NotEmpty(message = "National ID Type is required")
+	private String nationalIDType;
+	
+	@OneToOne(mappedBy = "covidCase", cascade = CascadeType.ALL)
+	private Address address;
+	
+	public CovidCase() {}
+
+	public CovidCase(Integer caseID, String source, String caseType, String firstName,
+			String lastName, String phone, String email, Date dateOfBirth,
+			String nationalID, String nationalIDType, Address address) {
+		this.caseID = caseID;
+		this.source = source;
+		this.caseType = caseType;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.dateOfBirth = dateOfBirth;
+		this.nationalID = nationalID;
+		this.nationalIDType = nationalIDType;
+		this.address = address;
+	}
+
+	public Integer getCaseID() {
+		return caseID;
+	}
+
+	public void setCaseID(Integer caseID) {
+		this.caseID = caseID;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getCaseType() {
+		return caseType;
+	}
+
+	public void setCaseType(String caseType) {
+		this.caseType = caseType;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getNationalID() {
+		return nationalID;
+	}
+
+	public void setNationalID(String nationalID) {
+		this.nationalID = nationalID;
+	}
+
+	public String getNationalIDType() {
+		return nationalIDType;
+	}
+
+	public void setNationalIDType(String nationalIDType) {
+		this.nationalIDType = nationalIDType;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+}

@@ -1,0 +1,57 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+
+public class Response{
+	
+	private int code;
+	private String status;
+	private String message;
+	private String description;
+    private LocalDateTime dateTime;
+	
+    public Response() {}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+    
+    
+
+}

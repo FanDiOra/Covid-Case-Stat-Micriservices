@@ -1,0 +1,7 @@
+package com.agrosofttechnologies.covidreports.repository;
+
+import com.agrosofttechnologies.covidreports.entities.Report;
+
+public interface ReportRepository JpaRepository<Report, Integer>  {
+
+}

@@ -1,0 +1,5 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+public class ResponseError {
+
+}

@@ -1,0 +1,68 @@
+package com.agrosofttechnologies.covidcaseregistration.bean;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Response<T> {
+	
+	private Integer code;
+	private String status;
+	private String message;
+	private String description;
+    private LocalDateTime dateTime;
+	
+	private T entity;
+	private List<T> entities = new ArrayList<>();
+	
+	public Response() {}
+
+	public Integer getCode() {
+		return code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+
+	public T getEntity() {
+		return entity;
+	}
+
+	public void setEntity(T entity) {
+		this.entity = entity;
+	}
+
+	public List<T> getEntities() {
+		return entities;
+	}
+
+	public void setEntities(List<T> entities) {
+		this.entities = entities;
+	}
+	
+}

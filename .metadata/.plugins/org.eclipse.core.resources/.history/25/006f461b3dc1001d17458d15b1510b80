@@ -1,0 +1,76 @@
+package com.agrosofttechnologies.covidcaseregistration;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.agrosofttechnologies.covidcaseregistration.bean.Address;
+import com.agrosofttechnologies.covidcaseregistration.bean.CovidCase;
+import com.agrosofttechnologies.covidcaseregistration.repository.AddressRepository;
+import com.agrosofttechnologies.covidcaseregistration.repository.CovidCaseRepository;
+
+@SpringBootTest
+class CovidCaseRegistrationControllerTest {
+
+	@Autowired
+	private CovidCaseRepository crepo;
+	
+	@Autowired
+	private AddressRepository arepo;
+	
+	@Test
+	void addCovidCase() {
+		
+		CovidCase covidCase1 = new CovidCase(0, "Hospital", "Positive", "John",
+				"Nixon", "541-754-3010", "john@gmail.com", "1989-04-26", "209-49-6193", "SSN");
+		
+		CovidCase covidCaseCreate1 = crepo.save(covidCase1);
+		
+		Address address1 = new Address(0, "1600 Pennsylvania Avenue NW", "Washington", "DC",
+				"20500", "USA");
+		address1.setCovidCase(covidCaseCreate1);
+		arepo.save(address1);
+		
+		/*
+		 * CovidCase covidCase2 = new CovidCase(0, "Hospital", "Recovered", "Ghislain",
+		 * "Akinocho", "77-569-95-77", "ghislain.akinocho.vac@esmt.sn", "1989-05-18",
+		 * "209-49-6194", "SN");
+		 * 
+		 * Address address2 = new Address(0, "Route de Ouakam", "Senegal", "DKR",
+		 * "10221", "Senegal");
+		 * 
+		 * covidCase2.setAddress(address2);
+		 * 
+		 * CovidCase covidCase3 = new CovidCase(0, "Hospital", "Vaccinated",
+		 * "Aminata Niang Adam", "Traore", "78-124-45-14", "ami.n.a.t@icloud.com",
+		 * "2000-02-03", "AA0300220", "ML");
+		 * 
+		 * Address address3 = new Address(0, "Rue 39 CO", "Senegal", "DKR", "20221",
+		 * "Senegal");
+		 * 
+		 * covidCase3.setAddress(address3);
+		 * 
+		 * CovidCase covidCase4 = new CovidCase(0, "Hospital", "Death", "Christine",
+		 * "Dupons", "07-77-95-67-38", "christined@gmail.com", "1971-01-13",
+		 * "159-74-2014", "MLK");
+		 * 
+		 * Address address4 = new Address(0, "3 square des 9 Arpents", "Meulan", "FR",
+		 * "27319", "FRANCE");
+		 * 
+		 * covidCase4.setAddress(address4);
+		 * 
+		 * CovidCase covidCase5 = new CovidCase(0, "Hospital", "Positive", "Gibraltar",
+		 * "Fox", "541-754-3010", "fox@gmail.com", "1989-04-26", "209-49-6193", "SSN");
+		 * 
+		 * Address address5 = new Address(0, "1600 Pennsylvania Avenue NW",
+		 * "Washington", "DC", "20500", "USA");
+		 * 
+		 * covidCase5.setAddress(address5);
+		 * 
+		 * 
+		 * crepo.save(covidCase2); crepo.save(covidCase3); crepo.save(covidCase4);
+		 * crepo.save(covidCase5);
+		 */
+	}
+
+}

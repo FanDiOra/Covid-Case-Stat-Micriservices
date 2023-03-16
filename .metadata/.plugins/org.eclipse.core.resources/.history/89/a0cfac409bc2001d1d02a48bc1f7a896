@@ -1,0 +1,5 @@
+package com.agrosofttechnologies.covidcaseregistration.Exceptions;
+
+public class DatabaseConnectivityException extends Exception {
+
+}

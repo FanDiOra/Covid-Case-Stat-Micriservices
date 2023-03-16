@@ -1,0 +1,16 @@
+package com.agrosofttechnologies.covidreports.entities;
+
+import java.io.Serializable;
+
+import jakarta.validation.constraints.NotEmpty;
+
+public class CovidCase implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@NotEmpty(message = "Case Type is required")
+	private String caseType;
+	
+	@NotEmpty(message = "Case Type is required")
+	private String state;
+}

@@ -1,0 +1,105 @@
+Notes Integration Services - SOA Projet :
+
+1. Create micro-services 
+	Projet
+		- Maven
+	Language
+		- Java
+	Spring boot
+		- 3.0.4
+	Projet Metadata
+		- Group
+			- com.agrosoft-technologies
+		- Artifact
+			- xxxxxxxxxxxxxx
+		- Packaging
+			- Jar
+		- Java
+			- 19
+	Dependencies
+		- Spring Web
+		- Spring Boot DevTools
+		- Spring Boot Actuator
+		- Config Client
+		- Spring Validation
+		- Spring JPA
+		- MySQL Connector
+		- H2 Database
+		- Eureka Server
+
+	1.1. covid-case-registration 
+
+		1.1.1. Initialize the projet with Spring Initialz
+
+		1.1.2. Unzip the project and import it in the workspace
+
+		1.1.3. Configure the application.properties file
+			- spring.application.name=covid-case-registration
+			- spring.config.import=optional:configserver:http://localhost:8888
+			- server.port=8000
+			- spring.datasource.url=jdbc:mysql://localhost:3306/covid_case_registration_bd?serverTimezone=UTC&useSSL=false
+			- spring.datasource.username=root
+			- spring.datasource.password=
+			- spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+			- spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+			- spring.jpa.hibernate.ddl-auto=update
+			- spring.jpa.show-sql=true
+
+		1.1.4. Create the differents packages and then create the differents classes and interface
+			- Entities
+				- CovidCase
+				- Address
+			- Repository
+				- CovidCaseRepository
+				- AddressRepository
+			- Beans
+				- ResponseError
+			- Controller
+				- CovidCaseRegistrationController
+
+
+		1.1.5. Create a data.sql file in src/main/ressources
+
+	1.2. covid-reports
+
+		1.2.1. Initialize the projet with Spring Initialz
+
+		1.2.2. Unzip the project and import it in the workspace
+
+		1.2.3. Configure the application.properties file
+			- spring.application.name=covid-reports
+			- spring.config.import=optional:configserver:http://localhost:8888
+			- server.port=8100
+			- spring.datasource.url=jdbc:mysql://localhost:3306/covid_reports_bd?serverTimezone=UTC&useSSL=false
+			- spring.datasource.username=root
+			- spring.datasource.password=
+			- spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+			- spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+			- spring.jpa.hibernate.ddl-auto=update
+			- spring.jpa.show-sql=true
+
+		1.1.4. Create the differents packages and then create the differents classes and interface
+			- Entities
+				- CovidReport
+				- Report
+				- CovidCase (caseType, State)
+			- Repository
+				- CovidReportRepository
+				- ReportRepository
+			- Beans
+				- ResponseError
+			- Controller
+				- CovidReportController
+
+
+
+
+
+			- spring.application.name
+			- spring.config.import
+			- server.port
+			- eureka.client.serviceUrl.defaultZone
+			- spring.jpa.show-sql
+			- spring.datasource.url
+			- spring.h2.console.enabled
+			- spring.jpa.defer-datasource-initialization
